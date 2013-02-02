@@ -36,7 +36,9 @@ class CommandProcessor(Settings):
         """
         python_binary = os.path.join(proj_path, self.path_to_python)
         manage = os.path.join(proj_path, self.path_to_manage, 'manage.py')
-        toCall = [python_binary, manage, commandToRun, params]
+        toCall = [python_binary, manage, commandToRun]
+        for p in params:
+            toCall.append(str(p))
         logging.debug('calling: %s' % toCall)
         self.call(toCall)
 

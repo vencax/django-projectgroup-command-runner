@@ -63,7 +63,10 @@ MONTHLY = {
                                   self.path_to_manage, 'manage.py')
 
             for comm, pars in commands:
-                desiredCalled.append([pyth, manage, comm, pars])
+                toCall = [pyth, manage, comm]
+                for p in pars:
+                    toCall.append(str(p))
+                desiredCalled.append(toCall)
 
         return desiredCalled
 
