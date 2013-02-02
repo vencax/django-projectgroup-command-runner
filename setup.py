@@ -13,8 +13,8 @@ setup(
     author_email='vencax77@gmail.com',
     url='https://github.com/vencax/django-projectgroup-command-runner',
     packages=find_packages(),
-    install_requires=[
-        'git+git://github.com/vencax/django-projectgroup-settings-iterator.git'
+    dependency_links=[
+        'https://github.com/vencax/django-projectgroup-settings-iterator'
     ],
     include_package_data=True,
 )
